@@ -1,0 +1,76 @@
+.thumbnail img{
+    width: 100%;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+.jumbotron{
+    background: #97b9c2;
+}
+
+.thumbnail {
+    padding: 0;
+}
+
+.thumbnail .caption-full{
+    padding: 9px;
+}
+
+
+#delete-form{
+    display: inline;
+}
+
+#bottom{
+    position:absolute;
+    bottom:30px;
+}
+
+.row{
+    overflow: hidden; 
+}
+
+#profile-row {
+    display: table;
+}
+
+.profile-col {
+    float: none;
+    display: table-cell;
+    vertical-align: top;
+}
+br+a {
+    margin-top: 10px;
+}
+
+/* Google Maps */
+#map {
+    height: 400px;
+    width: 100%;
+}
+
+
+.align-center{
+    text-align: center;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  /* Set the fixed height of the footer here */
+  height: 40px;
+  background-color: #f5f5f5;
+   overflow: hidden;
+}
+
+.container .text-muted {
+  margin: 10px 0;
+  text-align: center;
+}
