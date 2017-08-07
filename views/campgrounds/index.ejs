@@ -11,9 +11,9 @@
     </p>
     </div>
 </header>
-    <% var rowCounter = 0; %>
+    <% var rowCounter = -1; %>
     <% campgrounds.forEach(function(campground){ %>
-    
+     <% rowCounter+=1; %>
     <% if(rowCounter%4 === 0){ %>
         <div class='row is-table-row'>
     <% } %>
@@ -30,14 +30,12 @@
          </div>
          
     <% if(rowCounter%4 === 3){ %>
-    <% console.log(rowCounter);%>
         </div>
     <% } %>
-    <% rowCounter+=1; %>
+   
     <% }); %>
 
- <% if(rowCounter%4 != 3){ %>
-    <% console.log(rowCounter);%>
+ <% if(!(rowCounter%4 === 3)){ %>
         </div>
     <% } %>
 
