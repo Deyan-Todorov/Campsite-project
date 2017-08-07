@@ -20,11 +20,9 @@ var $ = require('jquery');
 
 
 
-/*mongoose.connect('mongodb://localhost/yelp_camp', {
-  useMongoClient: true,});*/
-  
-  mongoose.connect('mongodb://d.todorov:alexa&bunny@ds157158.mlab.com:57158/campsite', {
+mongoose.connect(process.env.DATABASE_URL, {
   useMongoClient: true,});
+  
 app.locals.moment = require('moment');
 app.use(bodyParser.urlencoded({extended: true}));
 app.set('view engine', 'ejs');
