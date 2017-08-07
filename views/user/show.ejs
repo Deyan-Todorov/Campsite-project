@@ -6,9 +6,11 @@
             <div class='thumbnail'>
             <h1 style='text-align: center'><%=user.username %></h1>
             <img src='<%= user.avatar %>'>
-             <% if( (currentUser && user._id.equals(currentUser._id)) || (currentUser && currentUser.isAdmin) ){ %>
+            
+            <!--Potential future functionality-->
+            <!-- <% if( (currentUser && user._id.equals(currentUser._id)) || (currentUser && currentUser.isAdmin) ){ %>
                 <button id='selectme' class="btn btn-warning" style='margin-left: 22%; width: 56%; margin-bottom:5px;'>Change Profile Picture</button>
-               <% } %>
+               <% } %> -->
             </div>
         </div>
         

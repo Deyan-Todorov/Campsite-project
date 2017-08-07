@@ -11,12 +11,15 @@
     </p>
     </div>
 </header>
-
-<div class='row'>
+    <% var rowCounter = 0; %>
     <% campgrounds.forEach(function(campground){ %>
-        <div class='col-md-3 col-sm-6'>
+    
+    <% if(rowCounter%4 === 0){ %>
+        <div class='row is-table-row'>
+    <% } %>
+        <div class='col-md-3 col-sm-6 '>
             <div class='thumbnail'>
-                 <img src="<%= campground.image %>" >
+                 <img class='height-limiter' src="<%= campground.image %>" >
              </div>
             <div class="caption">
              <h4 class='align-center'>    <%= campground.name %>  </h4>
@@ -25,10 +28,18 @@
                  <a href='/campgrounds/<%=campground._id %>' class='btn btn-primary'>More info</a>
              </p>
          </div>
+         
+    <% if(rowCounter%4 === 3){ %>
+    <% console.log(rowCounter);%>
+        </div>
+    <% } %>
+    <% rowCounter+=1; %>
     <% }); %>
-</div>
 
-
+ <% if(rowCounter%4 != 3){ %>
+    <% console.log(rowCounter);%>
+        </div>
+    <% } %>
 
 
 <% include ../partials/footer %>
