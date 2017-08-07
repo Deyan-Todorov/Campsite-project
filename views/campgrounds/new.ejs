@@ -1,36 +1,33 @@
 <% include ../partials/header %>
-<div class='container'>
-    <div class='row'>
-        <div class='col-md-2'></div>
-        <div class='col-md-8'>
-<h1 class='align-center'>Create a New Campground!</h1>
-<div>
-<form action='/campgrounds' method='POST'>
-    <div class='form-group'>
-    <input class='form-control' type='text' name='name' placeholder='Name of the location'>
-    </div>
-    <div class="form-group">
-    <input class="form-control" type="text" name="location" id="location" placeholder="Location - for example: 'Yosemite National Park, CA'">
-    </div>
 
-    <div class='form-group'>
-    <input class='form-control' type='number' name='price' placeholder='Price' min='0.01' step='0.01'>
+    <div class='container'>
+        <div class='row'>
+            <div class='col-md-2'></div>
+            <div class='col-md-8'>
+                <h1 class='align-center'>Create a New Campground!</h1>
+                <form action='/campgrounds' method='POST'>
+                    <div class='form-group'>
+                        <input class='form-control' type='text' name='name' placeholder='Name of the location'>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="location" id="location" placeholder="Location - for example: 'Yosemite National Park, CA'">
+                    </div>
+                    <div class='form-group'>
+                        <input class='form-control' type='number' name='price' placeholder='Price' min='0.01' step='0.01'>
+                    </div>
+                    <div class='form-group'>
+                        <input class='form-control' type='text' name='image' placeholder='url to the image'>
+                    </div>
+                     <div class='form-group'>
+                         <textarea class="form-control" rows="5" name='description' placeholder='A brief description.'></textarea>
+                    </div>
+                    <div class='form-group'>
+                        <button class='btn btn-lg btn-default btn-block'>Submit!</button>
+                    </div>
+                </form> 
+                <a href='/campgrounds'>Go back</a>
+            </div>
+        </div>
     </div>
-    <div class='form-group'>
-    <input class='form-control' type='text' name='image' placeholder='url to the image'>
-    </div>
-     <div class='form-group'>
-         <textarea class="form-control" rows="5" name='description' placeholder='A brief description.'></textarea>
-
-    </div>
-    <div class='form-group'>
-    <button class='btn btn-lg btn-default btn-block'>Submit!</button>
-    </div>
-</form> 
-
-<a href='/campgrounds'>Go back</a>
-</div>
-</div>
-</div>
-</div>
+    
 <% include ../partials/footer %>

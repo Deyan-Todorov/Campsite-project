@@ -1,28 +1,28 @@
 <% include ../partials/header %>
 
-
-
-<header class ='jumbotron'>
-    <div class='container'>
-    <h1 style='color: #113743'>Welcome to the campsite!</h1>
-    <p style='color: #42313a'>View our hand-picked campgrounds from all over the world!</p>
-    <p>
-        <a class='btn btn-primary btn-lg' href='/campgrounds/new'>Add a new campground!</a>
-    </p>
-    </div>
-</header>
+    <header class ='jumbotron'>
+        <div class='container'>
+            <h1 style='color: #113743'>Welcome to the campsite!</h1>
+            <p style='color: #42313a'>View our hand-picked campgrounds from all over the world!</p>
+            <p>
+                <a class='btn btn-primary btn-lg' href='/campgrounds/new'>Add a new campground!</a>
+            </p>
+        </div>
+    </header>
+    
+    <!--Below is a simple algorithm that fills out the page with links to campgrounds. the row counter decides when a new row should be added (every 4 campgrounds).-->
     <% var rowCounter = -1; %>
     <% campgrounds.forEach(function(campground){ %>
-     <% rowCounter+=1; %>
-    <% if(rowCounter%4 === 0){ %>
-        <div class='row is-table-row'>
-    <% } %>
+        <% rowCounter+=1; %>
+        <% if(rowCounter%4 === 0){ %>
+            <div class='row is-table-row'>
+        <% } %>
         <div class='col-md-3 col-sm-6 '>
             <div class='thumbnail'>
                  <img class='height-limiter' src="<%= campground.image %>" >
              </div>
             <div class="caption">
-             <h4 class='align-center'>    <%= campground.name %>  </h4>
+                 <h4 class='align-center'><%= campground.name %></h4>
              </div>
              <p class='align-center'>
                  <a href='/campgrounds/<%=campground._id %>' class='btn btn-primary'>More info</a>
@@ -32,12 +32,9 @@
     <% if(rowCounter%4 === 3){ %>
         </div>
     <% } %>
-   
     <% }); %>
-
- <% if(!(rowCounter%4 === 3)){ %>
+    <% if(!(rowCounter%4 === 3)){ %>
         </div>
     <% } %>
-
 
 <% include ../partials/footer %>

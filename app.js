@@ -1,32 +1,29 @@
-var express = require('express');
-var app = express();
-var bodyParser = require('body-parser');
-var mongoose = require('mongoose');
-var Campground = require('./models/campground.js'),
+var express = require('express'),
+    app = express(),
+    bodyParser = require('body-parser'),
+    methodOverride = require('method-override'),
+    flash = require('connect-flash');
+
+var mongoose = require('mongoose'),
+    Campground = require('./models/campground.js'),
     Comment = require('./models/comment.js'),
-    User = require('./models/user.js');
-var passport = require('passport');
-var LocalStrategy = require('passport-local');
-var methodOverride = require('method-override');
-var flash = require('connect-flash');
+    User = require('./models/user.js'),
+    passport = require('passport'),
+    LocalStrategy = require('passport-local');
 
-var commentRoutes = require('./routes/comments');
-var campgroundRoutes = require('./routes/campgrounds');
-var authRoutes = require('./routes/index');
-var $ = require('jquery');
-
-    
-    
-
-
+var commentRoutes = require('./routes/comments'),
+    campgroundRoutes = require('./routes/campgrounds'),
+    authRoutes = require('./routes/index');
 
 mongoose.connect(process.env.DATABASE_URL, {
-  useMongoClient: true,});
+  useMongoClient: true,
+});
   
 app.locals.moment = require('moment');
 app.use(bodyParser.urlencoded({extended: true}));
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
+
 //var seedDB = require('./seeds');
 
 app.use(require('express-session')({

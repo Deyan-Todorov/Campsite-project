@@ -41,9 +41,8 @@ router.post('/', middleware.isLoggenIn, function(req, res){
         if(err){
             console.log(err);
         } else {
-             user.campgrounds.push(newlyCreated);
+            user.campgrounds.push(newlyCreated);
             user.save();
-            console.log(newlyCreated);
             res.redirect("/campgrounds");
         }
     });
@@ -58,8 +57,7 @@ router.get('/:id', function(req, res){
             console.log('Error!');
             console.log(req.params.id);
             } else{
-                console.log(foundCampground);
-           res.render('campgrounds/show', {campground: foundCampground});  
+                    res.render('campgrounds/show', {campground: foundCampground});  
         }
     });
    

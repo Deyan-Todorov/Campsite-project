@@ -1,6 +1,5 @@
 <% include ../partials/header %>
 
-
     <div class='row' id='profile-row'>
         <div class='col-md-4 col-sm-6 profile-col'>
             <div class='thumbnail'>
@@ -14,63 +13,44 @@
             </div>
         </div>
         
-         <div class='col-md-6  profile-col' style='height: 100%'>
-             
-             
+        <div class='col-md-6  profile-col' style='height: 100%'>
              <div class="panel panel-primary">
-                <!-- Default panel contents -->
                 <div class="panel-heading ">Profile:</div>
                 <div class="panel-body">
-                <p>"<%=user.introduction %>"</p>
+                    <p>"<%=user.introduction %>"</p>
                 </div>
-                
-                <!-- List group -->
+
                 <ul class="list-group">
-                <li class="list-group-item">Name:  <%=user.firstName %> <%=user.lastName %> </li>
-                <li class="list-group-item">E-mail: <%=user.email %></li>
+                    <li class="list-group-item">Name:  <%=user.firstName %> <%=user.lastName %> </li>
+                    <li class="list-group-item">E-mail: <%=user.email %></li>
                 </ul>
                 </div>
-<% if( (currentUser && user._id.equals(currentUser._id)) || (currentUser && currentUser.isAdmin) ){ %>
- <div class="panel panel-info">
-  <!-- Default panel contents -->
-  <div class="panel-heading">Additional options:</div>
-  <div class="panel-body">
-<a class='btn btn-xs btn-warning' href='/users/<%=user._id%>/edit'>Edit Information</a>
-<a class='btn btn-xs btn-primary' href='/forgot'>Reset Password</a>
-  </div>
-
-</div>
-
+                
+            <% if( (currentUser && user._id.equals(currentUser._id)) || (currentUser && currentUser.isAdmin) ){ %>
+                 <div class="panel panel-info">
+                  <div class="panel-heading">Additional options:</div>
+                        <div class="panel-body">
+                            <a class='btn btn-xs btn-warning' href='/users/<%=user._id%>/edit'>Edit Information</a>
+                            <a class='btn btn-xs btn-primary' href='/forgot'>Reset Password</a>
+                        </div>
+                    </div>
             <% } %>
-
-            
-
         </div>
         
-         <div class='col-md-6 profile-col'>
+        <div class='col-md-6 profile-col'>
             <div class="panel panel-info">
-  <!-- Default panel contents -->
-  <div class="panel-heading">Submissions</div>
-  <div class="panel-body">
-    <p>Here are some of the posts by the user:</p>
-  </div>
-
-  <ul class="list-group">
-       <% user.campgrounds.forEach(function(campground){ %>
-            <li class='list-group-item'><a href='/campgrounds/<%=campground._id%>'><%=campground.name%></a></li>
-                 <% }) %>
-  </ul>
-</div>
-            </div>
+                <div class="panel-heading">Submissions</div>
+                <div class="panel-body">
+                        <p>Here are some of the posts by the user:</p>
+                </div>
             
-        
-        
-        
-        
+                <ul class="list-group">
+                    <% user.campgrounds.forEach(function(campground){ %>
+                        <li class='list-group-item'><a href='/campgrounds/<%=campground._id%>'><%=campground.name%></a></li>
+                    <% }) %>
+                </ul>
+            </div>
+        </div>
     </div>
     
-
-
-
-
 <% include ../partials/footer %>
